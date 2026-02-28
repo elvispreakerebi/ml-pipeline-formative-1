@@ -1,0 +1,82 @@
+[
+  {
+    "order_date": "2024-12-31T00:00:00Z",
+    "product": { "name": "Printer", "category": "Office" },
+    "region": "North",
+    "quantity": 4,
+    "sales": 3640.00,
+    "profit": 348.93
+  },
+  {
+    "order_date": "2022-11-27T00:00:00Z",
+    "product": { "name": "Mouse", "category": "Accessories" },
+    "region": "East",
+    "quantity": 7,
+    "sales": 1197.00,
+    "profit": 106.53
+  },
+  {
+    "order_date": "2022-05-11T00:00:00Z",
+    "product": { "name": "Tablet", "category": "Electronics" },
+    "region": "South",
+    "quantity": 5,
+    "sales": 5865.00,
+    "profit": 502.73
+  },
+  {
+    "order_date": "2024-03-16T00:00:00Z",
+    "product": { "name": "Mouse", "category": "Accessories" },
+    "region": "South",
+    "quantity": 2,
+    "sales": 786.00,
+    "profit": 202.87
+  },
+  {
+    "order_date": "2022-09-10T00:00:00Z",
+    "product": { "name": "Mouse", "category": "Accessories" },
+    "region": "West",
+    "quantity": 1,
+    "sales": 509.00,
+    "profit": 103.28
+  },
+  {
+    "order_date": "2023-12-01T00:00:00Z",
+    "product": { "name": "Camera", "category": "Electronics" },
+    "region": "West",
+    "quantity": 1,
+    "sales": 524.00,
+    "profit": 106.35
+  },
+  {
+    "order_date": "2023-10-09T00:00:00Z",
+    "product": { "name": "Headphones", "category": "Accessories" },
+    "region": "North",
+    "quantity": 7,
+    "sales": 6167.00,
+    "profit": 1027.98
+  },
+  {
+    "order_date": "2022-01-14T00:00:00Z",
+    "product": { "name": "Camera", "category": "Electronics" },
+    "region": "South",
+    "quantity": 7,
+    "sales": 3059.00,
+    "profit": 873.50
+  },
+  {
+    "order_date": "2024-02-03T00:00:00Z",
+    "product": { "name": "Smartphone", "category": "Electronics" },
+    "region": "West",
+    "quantity": 5,
+    "sales": 4205.00,
+    "profit": 585.29
+  },
+  {
+    "order_date": "2023-12-11T00:00:00Z",
+    "product": { "name": "Laptop", "category": "Electronics" },
+    "region": "West",
+    "quantity": 9,
+    "sales": 6138.00,
+    "profit": 1562.14
+  }
+]
