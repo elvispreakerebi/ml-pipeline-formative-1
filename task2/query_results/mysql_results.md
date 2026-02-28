@@ -25,11 +25,10 @@ ORDER BY o.order_date DESC, o.order_id DESC
 LIMIT 1;
 ```
 
-**Expected result:** One row with the most recent order. Based on the dataset (max date 2024-12-31), example:
-
+**Result:**
 | order_id | order_date | product_name | category_name | region_name | quantity | sales | profit |
 |----------|------------|--------------|---------------|-------------|----------|-------|--------|
-| (varies) | 2024-12-31 | Printer      | Office        | North       | 4        | 3640  | 348.93 |
+| 1175     | 2024-12-31 | Smartphone   | Electronics   | West        | 6        | 930.00| 213.60 |
 
 ---
 
@@ -48,7 +47,7 @@ ORDER BY o.order_date, o.order_id
 LIMIT 20;
 ```
 
-**Expected result:** Up to 20 orders from 2023, with product, category, region, and metrics.
+**Result:** 20 orders from 2023 (sample: Keyboard/Printer/Camera/Smartphone on 2023-01-01, Mouse/Laptop on 2023-01-02, etc.).
 
 ---
 
@@ -69,7 +68,12 @@ GROUP BY c.category_name
 ORDER BY total_sales DESC;
 ```
 
-**Expected result:** One row per category (Accessories, Electronics, Office) with aggregated metrics.
+**Result:**
+| category_name | order_count | total_quantity | total_sales | total_profit |
+|---------------|-------------|----------------|-------------|--------------|
+| Electronics   | 604         | 2919           | 1881367.00  | 331270.15    |
+| Accessories   | 470         | 2333           | 1495723.00  | 261626.94    |
+| Office        | 130         | 673            | 409502.00   | 73969.33     |
 
 ---
 
@@ -87,4 +91,4 @@ GROUP BY o.order_date
 ORDER BY o.order_date;
 ```
 
-**Expected result:** One row per day in March 2024 with daily totals.
+**Result:** 25 days in March 2024 with daily_quantity, daily_sales, daily_profit (e.g. 2024-03-01: 14 units, 9444 sales; 2024-03-04: 47 units, 37581 sales).

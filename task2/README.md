@@ -5,20 +5,22 @@ Database design and implementation for the ecommerce sales time-series dataset.
 ## Prerequisites
 
 - Local MySQL 8.x
-- Local MongoDB
+- Local MongoDB (or Docker)
 - Python 3.8+ with `pip install -r requirements.txt`
 
-## Setup
+## Quick Start
 
-1. **MySQL**: Create schema and load data
+**1. Start the databases** – see [SETUP.md](SETUP.md) for MySQL and MongoDB startup commands.
+
+**2. Create `.env`** – copy from `.env.example` and set your `MYSQL_PASSWORD`:
    ```bash
-   mysql -u root < task2/database/sql/schema.sql
-   python task2/database/scripts/load_mysql.py
+   cp .env.example .env
+   # Edit .env and add your MySQL root password
    ```
 
-2. **MongoDB**: Load data
+**3. Run everything:**
    ```bash
-   python task2/database/scripts/load_mongodb.py
+   ./task2/run_all.sh
    ```
 
 ## Structure
