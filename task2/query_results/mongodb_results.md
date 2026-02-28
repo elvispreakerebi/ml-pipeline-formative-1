@@ -21,18 +21,9 @@ python task2/database/mongodb/queries.py
 coll.find_one(sort=[("order_date", -1)])
 ```
 
-**Expected result:** Single document with the most recent order_date. Example:
-
-```json
-{
-  "_id": ObjectId("..."),
-  "order_date": ISODate("2024-12-31T00:00:00Z"),
-  "product": { "name": "Printer", "category": "Office" },
-  "region": "North",
-  "quantity": 4,
-  "sales": 3640.0,
-  "profit": 348.93
-}
+**Result:**
+```python
+{'_id': '69a35067681963129a35a046', 'order_date': datetime(2024, 12, 31, 0, 0), 'product': {'name': 'Smartphone', 'category': 'Electronics'}, 'region': 'West', 'quantity': 6, 'sales': 930.0, 'profit': 213.6}
 ```
 
 ---
@@ -45,7 +36,7 @@ coll.find({"order_date": {"$gte": datetime(2023,1,1), "$lte": datetime(2023,12,3
   .sort("order_date", 1).limit(20)
 ```
 
-**Expected result:** Up to 20 documents from 2023, sorted by order_date.
+**Result:** Multiple documents from 2023, sorted by order_date (first 5 shown in output).
 
 ---
 
@@ -66,7 +57,12 @@ coll.find({"order_date": {"$gte": datetime(2023,1,1), "$lte": datetime(2023,12,3
 ]
 ```
 
-**Expected result:** One document per category (Accessories, Electronics, Office) with aggregated metrics.
+**Result:**
+```
+{'_id': 'Electronics', 'order_count': 604, 'total_quantity': 2919, 'total_sales': 1881367.0, 'total_profit': 331270.15}
+{'_id': 'Accessories', 'order_count': 470, 'total_quantity': 2333, 'total_sales': 1495723.0, 'total_profit': 261626.94}
+{'_id': 'Office', 'order_count': 130, 'total_quantity': 673, 'total_sales': 409502.0, 'total_profit': 73969.33}
+```
 
 ---
 
@@ -86,4 +82,4 @@ coll.find({"order_date": {"$gte": datetime(2023,1,1), "$lte": datetime(2023,12,3
 ]
 ```
 
-**Expected result:** One document per day in March 2024 with daily totals.
+**Result:** One document per day in March 2024 with daily_quantity, daily_sales, daily_profit (25 days with data).
